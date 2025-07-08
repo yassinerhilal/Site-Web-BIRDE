@@ -1,0 +1,2398 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COLOOUF BIRD SHOP</title>
+    <link rel="icon" href="_d16ecba7-dd1d-4df3-9d7d-ba354e9c6ca6.jpg" type="image/x-icon">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+            color: #3e3e3e;
+        }
+
+        .bird {
+            position: relative;
+            animation: mymove 5s infinite;
+        }
+
+        @keyframes mymove {
+            0% {
+                left: 0px;
+            }
+
+            50% {
+                left: 200px;
+            }
+
+            100% {
+                left: 0px;
+            }
+        }
+
+        nav {
+            background-color: #333;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            margin: 0 10px;
+        }
+
+        header {
+            width: 98, 6%;
+            height: 250px;
+            background-color: #ff9800;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+
+        #store-title {
+            font-size: 1.8em;
+            margin-bottom: 30px;
+            margin: 10px;
+        }
+
+        #branding {
+            font-family: 'Roboto', sans-serif;
+            font-size: 1.6em;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+        }
+
+        #store-info {
+            margin-top: -20px;
+        }
+
+        .product-category {
+            width: 94%;
+            display: flex;
+            flex-wrap: wrap;
+            border: 2px solid #9d9d9d;
+            border-radius: 10px;
+            margin: 20px;
+            padding: 10px;
+        }
+
+        nav {
+            background-color: #333;
+            padding: 20px;
+            text-align: center;
+        }
+
+        button {
+            height: 35px;
+            width: 110px;
+            padding: 5px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            text-align: center;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .product:hover {
+            background-color: #bbb;
+        }
+
+        .product button:before {
+            content: "\1F6D2";
+            margin-right: 5px;
+        }
+
+        .cart-button::before {
+            content: "\1F6D2";
+            margin-right: 5px;
+        }
+
+        .product {
+            box-shadow: 0 14px 14px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        .product {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 10px;
+            width: 230px;
+            text-align: center;
+            background-color: #fff;
+            transition: background-color 0.5s ease;
+        }
+
+        img {
+            width: 196px;
+            height: 196px;
+            border-radius: 20%;
+        }
+
+        footer {
+            color: #00d5fa;
+            text-align: center;
+            position: absolute;
+            width: 98%;
+        }
+
+        #cart {
+            position: absolute;
+            top: 250px;
+            right: 20px;
+            width: 20%;
+            background-color: #555;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        #cart button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 8px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        #search-box {
+            margin: 5px;
+            text-align: center;
+        }
+
+        #search-box input {
+            padding: 8px;
+            width: 200px;
+            border: 1px solid #ddd;
+            border-radius: 7px;
+        }
+
+        form {
+            background-color: white;
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0 20px 29px rgba(0, 0, 0, 0.3);
+            margin: auto;
+            width: 95%;
+            height: 350px;
+            text-align: center;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            padding: 20px;
+        }
+
+        .section20 {
+            background-color: white;
+            border-radius: 20px;
+            margin: 10px;
+            padding: 20px;
+            width: 250px;
+            height: 230px;
+            text-align: center;
+            box-shadow: 0 20px 29px rgba(0, 0, 0, 0.3);
+        }
+
+        .section:hover {
+            background-color: #c1c1c1;
+        }
+
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 24px;
+        }
+
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: url('sun_icon.png');
+            height: 16px;
+            width: 16px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+
+        input:checked+.slider {
+            background-color: #2196F3;
+        }
+
+        input:checked+.slider:before {
+            -webkit-transform: translateX(26px);
+            -ms-transform: translateX(26px);
+            transform: translateX(26px);
+            content: url('moon_icon.png');
+        }
+
+        .slider.round {
+            border-radius: 34px;
+        }
+
+        .slider.round:before {
+            border-radius: 50%;
+        }
+
+        #chatButton {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background-color: #ff9800;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 24px;
+            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        #chatButton:hover {
+            background-color: #0069c0;
+        }
+
+        #chatWindow {
+            display: none;
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            width: 330px;
+            height: 400px;
+            border: 1px solid #ccc;
+            background-color: #fff;
+            color: #333;
+            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+        }
+
+        #titleBar {
+            background-color: #0084ff;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-size: 18px;
+            position: relative;
+        }
+
+        #messageBox {
+            width: 90%;
+            height: 65%;
+            overflow-y: auto;
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        #inputBox {
+            width: 70%;
+            height: 5%;
+            padding: 6px;
+            border: none;
+            background-color: #f5f5f5;
+            outline: none;
+            display: inline-block;
+        }
+
+        #sendButton {
+            width: 20%;
+            height: 40px;
+            background-color: #6fb1ef;
+            color: rgb(8, 7, 7);
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            display: inline-block;
+        }
+
+        #sendButton:hover {
+            background-color: #0069c0;
+        }
+
+        #closeButton {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #ff6666;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 25px;
+            height: 25px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        #closeButton:hover {
+            background-color: #ff3333;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div id="header-content">
+            <div id="branding">
+                <img src="_d16ecba7-dd1d-4df3-9d7d-ba354e9c6ca6.jpg" alt="Your Brand Logo"
+                    style="width: 200px; height: 200px; border-radius: 40%;margin: 10px;">
+                <div id="store-title">COLOOUF BIRD SHOP</div>
+                <img class="bird" src="92044c932a3d2241f67d52778489378b.gif" alt="Bird">
+            </div>
+            <div id="store-info"><br>
+                <div id="language-selector">
+                    Language:
+                    <select>
+                        <option value="en">English</option>
+                        <option value="en">Arabe</option>
+                        <option value="en">Françaais</option>
+                        <option value="es">Español</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </header>
+    <nav>
+        <a>Home</a>
+        <a>Products</a>
+        <a>Settings</a>
+        <a>Toggle Switch
+            <label class="switch">
+                <input type="checkbox" onclick="changeTheme()">
+                <span class="slider round"></span>
+            </label>
+        </a>
+        <script>
+            if (localStorage.getItem("themeMode") === "dark") {
+                addCssDark();
+            } else {
+                localStorage.setItem("themeMode", "light");
+            }
+
+            function changeTheme() {
+                if (localStorage.getItem("themeMode") === "light") {
+                    addCssDark();
+                    localStorage.setItem("themeMode", "dark");
+                } else {
+                    document.getElementById("masdark").remove();
+                    localStorage.setItem("themeMode", "light");
+                }
+            }
+
+            function addCssDark() {
+                document.head.innerHTML = document.head.innerHTML + '<style id="masdark">html, html * {color: #eeeeee !important; background-color: #444444 !important;} a {color: #8db2e5 !important;} a:visited {color: rgb(211, 138, 138) !important;} #toggles.active {background: #fff !important;}</style>';
+            }
+        </script>
+    </nav>
+    <div id="search-box">
+        <select style="height: 30px;width: 100px;">
+            <option value="all">All types</option>
+            <option value="category1">The canary part</option>
+            <option value="category2">The Cockatiel part</option>
+            <option value="cats">The Java Sparrow part</option>
+            <option value="dogs">Budgies and Lovebird part</option>
+            <option value="dogs">Goldfinch and The Parrot part</option>
+            <option value="dogs">Test</option>
+        </select>
+        <input type="text" placeholder="Search...">
+        <button onclick="searchProducts()" style="background-color: #4CAF50;color: white;">Search</button>
+    </div>
+    <div id="cart">
+        <h2 class="cart-button">Shopping Cart</h2>
+        <ul id="cart-items">
+        </ul>
+        <p>Total: $<span id="cart-total">0.00</span></p>
+        <button onclick="clearCart()">Clear Cart</button>
+        <button class="cart-button">Paying</button>
+    </div>
+
+    <script>
+        let cartItems = [];
+        let cartTotal = 0;
+        function addToCart(productName, productPrice) {
+            cartItems.push({ name: productName, price: productPrice });
+            cartTotal += productPrice;
+            updateCart();
+        }
+        function removeFromCart(index) {
+            const removedItem = cartItems.splice(index, 1)[0];
+            cartTotal -= removedItem.price;
+            updateCart();
+        }
+        function clearCart() {
+            cartItems = [];
+            cartTotal = 0;
+            updateCart();
+        }
+        function updateCart() {
+            const cartList = document.getElementById('cart-items');
+            const cartTotalElement = document.getElementById('cart-total');
+            cartList.innerHTML = '';
+            cartItems.forEach((item, index) => {
+                const listItem = document.createElement('li');
+                listItem.textContent = `${item.name} - $${item.price}`;
+                const removeButton = document.createElement('button');
+                removeButton.textContent = 'Remove';
+                removeButton.onclick = () => removeFromCart(index);
+                listItem.appendChild(removeButton);
+                cartList.appendChild(listItem);
+            });
+            cartTotalElement.textContent = cartTotal.toFixed(2);
+        }
+    </script>
+
+    <section>
+        <h1
+            style="text-align: center; background-color: rgb(255, 196, 0);width: 100%;height: 40px;border-radius: 20px;">
+            The canary part</h1>
+        <div class="product-category">
+            <div class="product">
+                <img src="3b8259a537d4cc68236dfd75dad87968 (1).jpg" alt="Product 1">
+                <h2>The canary is red</h2>
+                <p>Small, bird with a melodious voice; ideal companion for bird lovers due to its activity and beauty.
+                </p>
+                <p>$19.99</p>
+                <button onclick="addToCart('Product 1', 19.99)">Add to Cart</button>
+            </div>
+
+            <div class="product">
+                <img src="6eb031f3bc37cde87af03c9b957073cc.jpg" alt="Product 2">
+                <h2>The canary is red</h2>
+                <p>Small, bird with a melodious voice; ideal companion for bird lovers due to its activity and beauty.
+                </p>
+                <p>$29.99</p>
+                <button onclick="addToCart('Product 2', 29.99)">Add to Cart</button>
+            </div>
+
+            <div class="product">
+                <img src="22c0fd1eeb645f7bdc1e598ef08f5415.jpg" alt="Product 3">
+                <h2>canary</h2>
+                <p>Small, bird with a melodious voice; ideal companion for bird lovers due to its activity and beauty.
+                </p>
+                <p>$39.99</p>
+                <button onclick="addToCart('Product 3', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="12ca5cacf04103c544886002179d5d20 (1).jpg" alt="Product 4">
+                <h2>Red and white canary</h2>
+                <p>Small, bird with a melodious voice; ideal companion for bird lovers due to its activity and beauty.
+                </p>
+                <p>$49.99</p>
+                <button onclick="addToCart('Product 4', 39.99)">Add to Cart</button>
+            </div>
+
+            <div class="product">
+                <img src="43b81d6ee2ecc1f227d8f484407146ec.jpg" alt="Product 5">
+                <h2>canary</h2>
+                <p>Small, bird with a melodious voice; ideal companion for bird lovers due to its activity and beauty.
+                </p>
+                <p>$59.99</p>
+                <button onclick="addToCart('Product 5', 39.99)">Add to Cart</button>
+            </div>
+
+            <div class="product">
+                <img src="00076d9c830f0c4a33bcf009ff4d07b9.jpg" alt="Product 6">
+                <h2>The canary is white</h2>
+                <p>Small, bird with a melodious voice; ideal companion for bird lovers due to its activity and beauty.
+                </p>
+                <p>$69.99</p>
+                <button onclick="addToCart('Product 6', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="396e57ad8d9eaa4d382376d7d00af12c (1).jpg" alt="Product 7">
+                <h2>Yellow canary</h2>
+                <p>Small, bird with a melodious voice; ideal companion for bird lovers due to its activity and beauty.
+                </p>
+                <p>$69.99</p>
+                <button onclick="addToCart('Product 7', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="413f8d660d45014fb3c983405896d334 (1).jpg" alt="Product 8">
+                <h2>canary</h2>
+                <p>Small, bird with a melodious voice; ideal companion for bird lovers due to its activity and beauty.
+                </p>
+                <p>$69.99</p>
+                <button onclick="addToCart('Product 8', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="526eb91ea9bc3ca6f72873de918a0399.jpg" alt="Product 9">
+                <h2>Yellow canary</h2>
+                <p>Small, bird with a melodious voice; ideal companion for bird lovers due to its activity and beauty.
+                </p>
+                <p>$39.99</p>
+                <button onclick="addToCart('Product 9', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="920fe71556cb911b2eedd41b86055b3c (1).jpg" alt="Product 10">
+                <h2>Yellow canary</h2>
+                <p>Small, bird with a melodious voice; ideal companion for bird lovers due to its activity and beauty..
+                </p>
+                <p>$49.99</p>
+                <button onclick="addToCart('Product 10', 39.99)">Add to Cart</button>
+            </div>
+
+            <div class="product">
+                <img src="4493a44f59e1f192b5a9d8192d65013f.jpg" alt="Product 11">
+                <h2>The canary is white</h2>
+                <p>Small, bird with a melodious voice; ideal companion for bird lovers due to its activity and beauty..
+                </p>
+                <p>$59.99</p>
+                <button onclick="addToCart('Product 11', 39.99)">Add to Cart</button>
+            </div>
+
+            <div class="product">
+                <img src="967a1c3f58825b089bbebad4fe9afbc7 (1).jpg" alt="Product 12">
+                <h2>The canary is red</h2>
+                <p>Small, bird with a melodious voice; ideal companion for bird lovers due to its activity and beauty.
+                </p>
+                <p>$69.99</p>
+                <button onclick="addToCart('Product 12', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="99101b37591b20e81d9c0f61121d574b (1).jpg" alt="Product 13">
+                <h2>The canary</h2>
+                <p>Small, bird with a melodious voice; ideal companion for bird lovers due to its activity and beauty.
+                </p>
+                <p>$69.99</p>
+                <button onclick="addToCart('Product 13', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="7123631ef16a2db532d0be399614fd3d.jpg" alt="Product 14">
+                <h2>The canary</h2>
+                <p>Small, bird with a melodious voice; ideal companion for bird lovers due to its activity and beauty.
+                </p>
+                <p>$69.99</p>
+                <button onclick="addToCart('Product 14', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="487197207d2d7f41554a21f845b82d23.jpg" alt="Product 15">
+                <h2>The canary</h2>
+                <p>Small, bird with a melodious voice; ideal companion for bird lovers due to its activity and beauty.
+                </p>
+                <p>$69.99</p>
+                <button onclick="addToCart('Product 15', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="b5c910acc51261f226f4f35af01736cb.jpg" alt="Product 16">
+                <h2>The canary</h2>
+                <p>Small, bird with a melodious voice; ideal companion for bird lovers due to its activity and beauty.
+                </p>
+                <p>$69.99</p>
+                <button onclick="addToCart('Product 16', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="c3c386adc524333fa7b0c5b5ca07cd5e.jpg" alt="Product 17">
+                <h2>The canary</h2>
+                <p>Small, bird with a melodious voice; ideal companion for bird lovers due to its activity and beauty.
+                </p>
+                <p>$69.99</p>
+                <button onclick="addToCart('Product 17', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="c0061c178399bcde2b209ec190b0f7ab.jpg" alt="Product 17">
+                <h2>The canary</h2>
+                <p>Small, bird with a melodious voice; ideal companion for bird lovers due to its activity and beauty.
+                </p>
+                <p>$69.99</p>
+                <button onclick="addToCart('Product 17', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="c91d7f6e11581a170513b02040946485.jpg" alt="Product 18">
+                <h2>The canary</h2>
+                <p>Small, bird with a melodious voice; ideal companion for bird lovers due to its activity and beauty.
+                </p>
+                <p>$69.99</p>
+                <button onclick="addToCart('Product 18', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="c750ecdcc7a08d3199b662bf2228837c.jpg" alt="Product 19">
+                <h2>The canary</h2>
+                <p>Small, bird with a melodious voice; ideal companion for bird lovers due to its activity and beauty.
+                </p>
+                <p>$69.99</p>
+                <button onclick="addToCart('Product 19', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="d66e66e9cf14899060da33889b70c7b7.jpg" alt="Product 20">
+                <h2>The canary</h2>
+                <p>Small, bird with a melodious voice; ideal companion for bird lovers due to its activity and beauty.
+                </p>
+                <p>$69.99</p>
+                <button onclick="addToCart('Product 20', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="e59ecd3ad4a2e67f057bd002e0ddbe08 (1).jpg" alt="Product 21">
+                <h2>The canary</h2>
+                <p>Small, bird with a melodious voice; ideal companion for bird lovers due to its activity and beauty.
+                </p>
+                <p>$69.99</p>
+                <button onclick="addToCart('Product 21', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="f09ac2ffca629cf93216ce2a5197e680.jpg" alt="Product 22">
+                <h2>The canary</h2>
+                <p>Small, bird with a melodious voice; ideal companion for bird lovers due to its activity and beauty.
+                </p>
+                <p>$69.99</p>
+                <button onclick="addToCart('Product 22', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="f0493bffc564128ec9f6c876ad88aa98.jpg" alt="Product 23">
+                <h2>The canary</h2>
+                <p>Small, bird with a melodious voice; ideal companion for bird lovers due to its activity and beauty.
+                </p>
+                <p>$69.99</p>
+                <button onclick="addToCart('Product 23', 39.99)">Add to Cart</button>
+            </div>
+        </div>
+
+        <h1
+            style="text-align: center; background-color: rgb(255, 196, 0);width: 100%;height: 40px;border-radius: 20px;">
+            The Cockatiel part</h1>
+        <div class="product-category">
+            <div class="product">
+                <img src="0b6507ff9725efb774f16418c63b7db3.jpg" alt="Product 24">
+                <h2>The Cockatiel</h2>
+                <p>Meet our playful cockatiels, friendly Australian birds with distinctive crests. Enjoy its lively
+                    nature. Cherishing tradition and social charm, these cheerful companions bring joy and liveliness to
+                    your home. Elevate your living space with these lively cockatiels today!</p>
+                <p>$19.99</p>
+                <button onclick="addToCart('Product 24', 19.99)">Add to Cart</button>
+            </div>
+
+            <div class="product">
+                <img src="1d94e38e43959b140b34b7406afa3f7a (1).jpg" alt="Product 25">
+                <h2>The Cockatiel</h2>
+                <p>Meet our playful cockatiels, friendly Australian birds with distinctive crests. Enjoy its lively
+                    nature. Cherishing tradition and social charm, these cheerful companions bring joy and liveliness to
+                    your home. Elevate your living space with these lively cockatiels today!</p>
+                <p>$29.99</p>
+                <button onclick="addToCart('Product 25', 29.99)">Add to Cart</button>
+            </div>
+
+            <div class="product">
+                <img src="02d264856f992b6a67d8b37004bff9b8 (1).jpg" alt="Product 26">
+                <h2>The Cockatiel</h2>
+                <p>Meet our playful cockatiels, friendly Australian birds with distinctive crests. Enjoy its lively
+                    nature. Cherishing tradition and social charm, these cheerful companions bring joy and liveliness to
+                    your home. Elevate your living space with these lively cockatiels today!</p>
+                <p>$39.99</p>
+                <button onclick="addToCart('Product 26', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="1eb7939663dc66b740daab2071154d87.jpg" alt="Product 27">
+                <h2>The Cockatiel</h2>
+                <p>Meet our playful cockatiels, friendly Australian birds with distinctive crests. Enjoy its lively
+                    nature. Cherishing tradition and social charm, these cheerful companions bring joy and liveliness to
+                    your home. Elevate your living space with these lively cockatiels today!</p>
+                <p>$49.99</p>
+                <button onclick="addToCart('Product 27', 39.99)">Add to Cart</button>
+            </div>
+
+            <div class="product">
+                <img src="03b72137b9fd5a39cec6ce0fbbde32f3.jpg" alt="Product 28">
+                <h2>The Cockatiel</h2>
+                <p>Meet our playful cockatiels, friendly Australian birds with distinctive crests. Enjoy its lively
+                    nature. Cherishing tradition and social charm, these cheerful companions bring joy and liveliness to
+                    your home. Elevate your living space with these lively cockatiels today!</p>
+                <p>$59.99</p>
+                <button onclick="addToCart('Product 28', 39.99)">Add to Cart</button>
+            </div>
+
+            <div class="product">
+                <img src="2ef2b7f678ea7a091bc1e1998c961add.jpg" alt="Product 29">
+                <h2>The Cockatiel</h2>
+                <p>Meet our playful cockatiels, friendly Australian birds with distinctive crests. Enjoy its lively
+                    nature. Cherishing tradition and social charm, these cheerful companions bring joy and liveliness to
+                    your home. Elevate your living space with these lively cockatiels today!</p>
+                <p>$69.99</p>
+                <button onclick="addToCart('Product 29', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="4a40aa189e83f39370881b7e300190ba (1).jpg" alt="Product 30">
+                <h2>The Cockatiel</h2>
+                <p>Meet our playful cockatiels, friendly Australian birds with distinctive crests. Enjoy its lively
+                    nature. Cherishing tradition and social charm, these cheerful companions bring joy and liveliness to
+                    your home. Elevate your living space with these lively cockatiels today!</p>
+                <p>$69.99</p>
+                <button onclick="addToCart('Product 30', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="ca771fa2c77ee4cfbbf93680b4364b90.jpg" alt="Product 31">
+                <h2>The Cockatiel</h2>
+                <p>Meet our playful cockatiels, friendly Australian birds with distinctive crests. Enjoy its lively
+                    nature. Cherishing tradition and social charm, these cheerful companions bring joy and liveliness to
+                    your home. Elevate your living space with these lively cockatiels today!</p>
+                <p>$69.99</p>
+                <button onclick="addToCart('Product 31', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="07e366961faa5c76c6c8f7aea5a5acd5 (1).jpg" alt="Product 32">
+                <h2>The Cockatiel</h2>
+                <p>Meet our playful cockatiels, friendly Australian birds with distinctive crests. Enjoy its lively
+                    nature. Cherishing tradition and social charm, these cheerful companions bring joy and liveliness to
+                    your home. Elevate your living space with these lively cockatiels today!</p>
+                <p>$39.99</p>
+                <button onclick="addToCart('Product 32', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="9c08d579b7ed6c585596206db4abb1f1 (1).jpg" alt="Product 33">
+                <h2>The Cockatiel</h2>
+                <p>Meet our playful cockatiels, friendly Australian birds with distinctive crests. Enjoy its lively
+                    nature. Cherishing tradition and social charm, these cheerful companions bring joy and liveliness to
+                    your home. Elevate your living space with these lively cockatiels today!</p>
+                <p>$49.99</p>
+                <button onclick="addToCart('Product 33', 39.99)">Add to Cart</button>
+            </div>
+
+            <div class="product">
+                <img src="033a699c1039c1dd00e9fdcb78652e09 (1).jpg" alt="Product 34">
+                <h2>The Cockatiel</h2>
+                <p>Meet our playful cockatiels, friendly Australian birds with distinctive crests. Enjoy its lively
+                    nature. Cherishing tradition and social charm, these cheerful companions bring joy and liveliness to
+                    your home. Elevate your living space with these lively cockatiels today!</p>
+                <p>$59.99</p>
+                <button onclick="addToCart('Product 34', 39.99)">Add to Cart</button>
+            </div>
+
+            <div class="product">
+                <img src="448ec71f1cc391968e5520d2ab8ddced.jpg" alt="Product 35">
+                <h2>The Cockatiel</h2>
+                <p>Meet our playful cockatiels, friendly Australian birds with distinctive crests. Enjoy its lively
+                    nature. Cherishing tradition and social charm, these cheerful companions bring joy and liveliness to
+                    your home. Elevate your living space with these lively cockatiels today!</p>
+                <p>$69.99</p>
+                <button onclick="addToCart('Product 35', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="727f9913af93ff409d3cdbbdda88c6fb (1).jpg" alt="Product 36">
+                <h2>The Cockatiel</h2>
+                <p>Meet our playful cockatiels, friendly Australian birds with distinctive crests. Enjoy its lively
+                    nature. Cherishing tradition and social charm, these cheerful companions bring joy and liveliness to
+                    your home. Elevate your living space with these lively cockatiels today!</p>
+                <p>$69.99</p>
+                <button onclick="addToCart('Product 36', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="a7d96ffc5db024d040c3fc38ebe2e477 (1).jpg" alt="Product 37">
+                <h2>The Cockatiel</h2>
+                <p>Meet our playful cockatiels, friendly Australian birds with distinctive crests. Enjoy its lively
+                    nature. Cherishing tradition and social charm, these cheerful companions bring joy and liveliness to
+                    your home. Elevate your living space with these lively cockatiels today!</p>
+                <p>$69.99</p>
+                <button onclick="addToCart('Product 37', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="a8638f89392c47ea9d33b71b6b5b9764 (1).jpg" alt="Product 38">
+                <h2>The Cockatiel</h2>
+                <p>Meet our playful cockatiels, friendly Australian birds with distinctive crests. Enjoy its lively
+                    nature. Cherishing tradition and social charm, these cheerful companions bring joy and liveliness to
+                    your home. Elevate your living space with these lively cockatiels today!</p>
+                <p>$69.99</p>
+                <button onclick="addToCart('Product 38', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="b9315de0a4bdf04ffb43e4b8f3a7c7b6 (1).jpg" alt="Product 39">
+                <h2>The Cockatiel</h2>
+                <p>Meet our playful cockatiels, friendly Australian birds with distinctive crests. Enjoy its lively
+                    nature. Cherishing tradition and social charm, these cheerful companions bring joy and liveliness to
+                    your home. Elevate your living space with these lively cockatiels today!</p>
+                <p>$69.99</p>
+                <button onclick="addToCart('Product 39', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="b0395dd013738c70f25d5e195a157ae7.jpg" alt="Product 40">
+                <h2>The Cockatiel</h2>
+                <p>Meet our playful cockatiels, friendly Australian birds with distinctive crests. Enjoy its lively
+                    nature. Cherishing tradition and social charm, these cheerful companions bring joy and liveliness to
+                    your home. Elevate your living space with these lively cockatiels today!</p>
+                <p>$69.99</p>
+                <button onclick="addToCart('Product 40', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="bebe608e327fae059f460614c6ee78a2.jpg" alt="Product 41">
+                <h2>The Cockatiel</h2>
+                <p>Meet our playful cockatiels, friendly Australian birds with distinctive crests. Enjoy its lively
+                    nature. Cherishing tradition and social charm, these cheerful companions bring joy and liveliness to
+                    your home. Elevate your living space with these lively cockatiels today!</p>
+                <p>$69.99</p>
+                <button onclick="addToCart('Product 41', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="e864d2742d75658d0b2abdb549de3605 (1).jpg" alt="Product 42">
+                <h2>The Cockatiel</h2>
+                <p>Meet our playful cockatiels, friendly Australian birds with distinctive crests. Enjoy its lively
+                    nature. Cherishing tradition and social charm, these cheerful companions bring joy and liveliness to
+                    your home. Elevate your living space with these lively cockatiels today!</p>
+                <p>$69.99</p>
+                <button onclick="addToCart('Product 42', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="ea3fe9915032e01f6ded46036b239752.jpg" alt="Product 43">
+                <h2>The Cockatiel</h2>
+                <p>Meet our playful cockatiels, friendly Australian birds with distinctive crests. Enjoy its lively
+                    nature. Cherishing tradition and social charm, these cheerful companions bring joy and liveliness to
+                    your home. Elevate your living space with these lively cockatiels today!</p>
+                <p>$69.99</p>
+                <button onclick="addToCart('Product 43', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="f2a317f05005c700071bfc3c8c66cd3a (1).jpg" alt="Product 44">
+                <h2>The Cockatiel</h2>
+                <p>Meet our playful cockatiels, friendly Australian birds with distinctive crests. Enjoy its lively
+                    nature. Cherishing tradition and social charm, these cheerful companions bring joy and liveliness to
+                    your home. Elevate your living space with these lively cockatiels today!</p>
+                <p>$69.99</p>
+                <button onclick="addToCart('Product 44', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="fe8cb6c6780dcc9d02915739e03f23fe (1).jpg" alt="Product 45">
+                <h2>The Cockatiel</h2>
+                <p>Meet our playful cockatiels, friendly Australian birds with distinctive crests. Enjoy its lively
+                    nature. Cherishing tradition and social charm, these cheerful companions bring joy and liveliness to
+                    your home. Elevate your living space with these lively cockatiels today!</p>
+                <p>$69.99</p>
+                <button onclick="addToCart('Product 45', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="6c9055cb3da11aae23f425c6b80bd7bb.jpg" alt="Product 46">
+                <h2>The Cockatiel</h2>
+                <p>Meet our playful cockatiels, friendly Australian birds with distinctive crests. Enjoy its lively
+                    nature. Cherishing tradition and social charm, these cheerful companions bring joy and liveliness to
+                    your home. Elevate your living space with these lively cockatiels today!</p>
+                <p>$69.99</p>
+                <button onclick="addToCart('Product 46', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="760df3a09764b519622de31a29b7da9f.jpg" alt="Product 47">
+                <h2>The Cockatiel</h2>
+                <p>Meet our playful cockatiels, friendly Australian birds with distinctive crests. Enjoy its lively
+                    nature. Cherishing tradition and social charm, these cheerful companions bring joy and liveliness to
+                    your home. Elevate your living space with these lively cockatiels today!</p>
+                <p>$69.99</p>
+                <button onclick="addToCart('Product 47', 39.99)">Add to Cart</button>
+            </div>
+        </div>
+        <h1
+            style="text-align: center; background-color: rgb(255, 196, 0);width: 100%;height: 40px;border-radius: 20px;">
+            The Java Sparrow part</h1>
+        <div class="product-category">
+            <div class="product">
+                <img src="00aa4061515c4b41e092c26815502853 (1).jpg" alt="Product 48">
+                <h2>The Java Sparrow</h2>
+                <p>Small, attractive bird from Indonesia, known for sociable nature and melodious song, making it an
+                    easy and delightful companion.</p>
+                <p>$19.99</p>
+                <button onclick="addToCart('Product 48', 19.99)">Add to Cart</button>
+            </div>
+
+            <div class="product">
+                <img src="0e3b2bb009ec1491598a3a146d0c56ee (1).jpg" alt="Product 49">
+                <h2>The Java Sparrow</h2>
+                <p>Small, attractive bird from Indonesia, known for sociable nature and melodious song, making it an
+                    easy and delightful companion.</p>
+                <p>$29.99</p>
+                <button onclick="addToCart('Product 49', 29.99)">Add to Cart</button>
+            </div>
+
+            <div class="product">
+                <img src="3a6de3571ed32743f70bf166bce27c1d.jpg" alt="Product 50">
+                <h2>The Java Sparrow</h2>
+                <p>Small, attractive bird from Indonesia, known for sociable nature and melodious song, making it an
+                    easy and delightful companion.</p>
+                <p>$39.99</p>
+                <button onclick="addToCart('Product 50', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="3b6b2ecb1dc486bfb8e5a5685a679cb0.jpg" alt="Product 51">
+                <h2>The Java Sparrow</h2>
+                <p>Small, attractive bird from Indonesia, known for sociable nature and melodious song, making it an
+                    easy and delightful companion.</p>
+                <p>$49.99</p>
+                <button onclick="addToCart('Product 51', 39.99)">Add to Cart</button>
+            </div>
+
+            <div class="product">
+                <img src="9c559270ad3f85587cc0159dc3ce8399.jpg" alt="Product 52">
+                <h2>The Java Sparrow</h2>
+                <p>Small, attractive bird from Indonesia, known for sociable nature and melodious song, making it an
+                    easy and delightful companion.</p>
+                <p>$59.99</p>
+                <button onclick="addToCart('Product 52', 39.99)">Add to Cart</button>
+            </div>
+
+            <div class="product">
+                <img src="3de93b1b80e52baad76d796991fcff74 (1).jpg" alt="Product 53">
+                <h2>The Java Sparrow</h2>
+                <p>Small, attractive bird from Indonesia, known for sociable nature and melodious song, making it an
+                    easy and delightful companion.</p>
+                <p>$69.99</p>
+                <button onclick="addToCart('Product 53', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="9a9560ea2e3a034d0399e3fd747a1957.jpg" alt="Product 54">
+                <h2>The Java Sparrow</h2>
+                <p>Small, attractive bird from Indonesia, known for sociable nature and melodious song, making it an
+                    easy and delightful companion.</p>
+                <p>$69.99</p>
+                <button onclick="addToCart('Product 54', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="9a0d9032c2ec2f2b758e53a24e15deae.jpg" alt="Product 55">
+                <h2>The Java Sparrow</h2>
+                <p>Small, attractive bird from Indonesia, known for sociable nature and melodious song, making it an
+                    easy and delightful companion.</p>
+                <p>$69.99</p>
+                <button onclick="addToCart('Product 55', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="9dc19c99f410622293295a2d56f6c07f (1).jpg" alt="Product 56">
+                <h2>The Java Sparrow</h2>
+                <p>Small, attractive bird from Indonesia, known for sociable nature and melodious song, making it an
+                    easy and delightful companion.</p>
+                <p>$39.99</p>
+                <button onclick="addToCart('Product 56', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="28d2ba727a220f8f2a285b583f4592bc (1).jpg" alt="Product 57">
+                <h2>The Java Sparrow</h2>
+                <p>Small, attractive bird from Indonesia, known for sociable nature and melodious song, making it an
+                    easy and delightful companion.</p>
+                <p>$49.99</p>
+                <button onclick="addToCart('Product 57', 39.99)">Add to Cart</button>
+            </div>
+
+            <div class="product">
+                <img src="98d1d1eb848e0d74d5610bb7b9e9d28d.jpg" alt="Product 58">
+                <h2>The Java Sparrow</h2>
+                <p>Small, attractive bird from Indonesia, known for sociable nature and melodious song, making it an
+                    easy and delightful companion.</p>
+                <p>$59.99</p>
+                <button onclick="addToCart('Product 58', 39.99)">Add to Cart</button>
+            </div>
+
+            <div class="product">
+                <img src="103f5442c4f2ff189a116e3ba5674035.jpg" alt="Product 59">
+                <h2>The Java Sparrow</h2>
+                <p>Small, attractive bird from Indonesia, known for sociable nature and melodious song, making it an
+                    easy and delightful companion.</p>
+                <p>$69.99</p>
+                <button onclick="addToCart('Product 59', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="326d46fe668692b47cd0151285cf1cad (1).jpg" alt="Product 60">
+                <h2>The Java Sparrow</h2>
+                <p>Small, attractive bird from Indonesia, known for sociable nature and melodious song, making it an
+                    easy and delightful companion.</p>
+                <p>$69.99</p>
+                <button onclick="addToCart('Product 60', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="743bc83369193f7a30c7690f2d5600de.jpg" alt="Product 61">
+                <h2>The Java Sparrow</h2>
+                <p>Small, attractive bird from Indonesia, known for sociable nature and melodious song, making it an
+                    easy and delightful companion.</p>
+                <p>$69.99</p>
+                <button onclick="addToCart('Product 61', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="87679f48c85809eb0af122f320e6355f.jpg" alt="Product 62">
+                <h2>The Java Sparrow</h2>
+                <p>Small, attractive bird from Indonesia, known for sociable nature and melodious song, making it an
+                    easy and delightful companion.</p>
+                <p>$69.99</p>
+                <button onclick="addToCart('Product 62', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="aff3295861f5aceb713fc2e0f955484d.jpg" alt="Product 63">
+                <h2>The Java Sparrow</h2>
+                <p>Small, attractive bird from Indonesia, known for sociable nature and melodious song, making it an
+                    easy and delightful companion.</p>
+                <p>$69.99</p>
+                <button onclick="addToCart('Product 63', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="b8044c6af280bdba104c33384f9e40df.jpg" alt="Product 64">
+                <h2>The Java Sparrow</h2>
+                <p>Small, attractive bird from Indonesia, known for sociable nature and melodious song, making it an
+                    easy and delightful companion.</p>
+                <p>$69.99</p>
+                <button onclick="addToCart('Product 64', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="e770b3cb66d608038be71049985d13b5 (1).jpg" alt="Product 65">
+                <h2>The Java Sparrow</h2>
+                <p>Small, attractive bird from Indonesia, known for sociable nature and melodious song, making it an
+                    easy and delightful companion.</p>
+                <p>$69.99</p>
+                <button onclick="addToCart('Product 65', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="c948abc63ad393f0f23fa243bbab87c0.jpg" alt="Product 66">
+                <h2>The Java Sparrow</h2>
+                <p>Small, attractive bird from Indonesia, known for sociable nature and melodious song, making it an
+                    easy and delightful companion.</p>
+                <p>$69.99</p>
+                <button onclick="addToCart('Product 66', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="dae8eafe72ac479083975a56bad235e8.jpg" alt="Product 67">
+                <h2>The Java Sparrow</h2>
+                <p>Small, attractive bird from Indonesia, known for sociable nature and melodious song, making it an
+                    easy and delightful companion.</p>
+                <p>$69.99</p>
+                <button onclick="addToCart('Product 67', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="dd0f61a30f28e6baa4ee8bbcb66d5715 (1).jpg" alt="Product 68">
+                <h2>The Java Sparrow</h2>
+                <p>Small, attractive bird from Indonesia, known for sociable nature and melodious song, making it an
+                    easy and delightful companion.</p>
+                <p>$69.99</p>
+                <button onclick="addToCart('Product 68', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="dd760b71f6878e6c66a257ea3b792fb2 (1).jpg" alt="Product 69">
+                <h2>The Java Sparrow</h2>
+                <p>Small, attractive bird from Indonesia, known for sociable nature and melodious song, making it an
+                    easy and delightful companion.</p>
+                <p>$69.99</p>
+                <button onclick="addToCart('Product 69', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="dddf07debcbd0d2eaf1747b686cb67e6.jpg" alt="Product 70">
+                <h2>The Java Sparrow</h2>
+                <p>Small, attractive bird from Indonesia, known for sociable nature and melodious song, making it an
+                    easy and delightful companion.</p>
+                <p>$69.99</p>
+                <button onclick="addToCart('Product 70', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="e599b5eb2700d43088d5e27b375df837 (1).jpg" alt="Product 71">
+                <h2>The Java Sparrow</h2>
+                <p>Small, attractive bird from Indonesia, known for sociable nature and melodious song, making it an
+                    easy and delightful companion.</p>
+                <p>$69.99</p>
+                <button onclick="addToCart('Product 71', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="edcc94b5a22a0657b0a114651eac4fe9 (1).jpg" alt="Product 72">
+                <h2>The Java Sparrow</h2>
+                <p>Small, attractive bird from Indonesia, known for sociable nature and melodious song, making it an
+                    easy and delightful companion.</p>
+                <p>$69.99</p>
+                <button onclick="addToCart('Product 72', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="f72c10b2bbde6dfb74211b951951f4eb (1).jpg" alt="Product 73">
+                <h2>The Java Sparrow</h2>
+                <p>Small, attractive bird from Indonesia, known for sociable nature and melodious song, making it an
+                    easy and delightful companion.</p>
+                <p>$69.99</p>
+                <button onclick="addToCart('Product 73', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="fb0cdd1756fd9fc4a75b2bba6496cb13.jpg" alt="Product 74">
+                <h2>The Java Sparrow</h2>
+                <p>Small, attractive bird from Indonesia, known for sociable nature and melodious song, making it an
+                    easy and delightful companion.</p>
+                <p>$69.99</p>
+                <button onclick="addToCart('Product 74', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="f5a3bd6bba3940327f0d34fd18561d11.jpg" alt="Product 75">
+                <h2>The Java Sparrow</h2>
+                <p>Small, attractive bird from Indonesia, known for sociable nature and melodious song, making it an
+                    easy and delightful companion.</p>
+                <p>$69.99</p>
+                <button onclick="addToCart('Product 75', 39.99)">Add to Cart</button>
+            </div>
+        </div>
+        <h1
+            style="text-align: center; background-color: rgb(255, 196, 0);width: 100%;height: 40px;border-radius: 20px;">
+            Budgies and Lovebird part</h1>
+        <div class="product-category">
+            <div class="product">
+                <img src="0a7ad5e5ea2b2e7b20dafae2e99152f0.jpg" alt="Product 76">
+                <h2>Small parrots</h2>
+                <p>Discover joy with our Australian parrot – a lively, sociable companion known for its unique
+                    personality and exceptional mimicry skills. Bring this special bird into your life and experience
+                    the beauty and charm it adds to every moment. Explore our collection now for joyful companionship!
+                </p>
+                <p>$19.99</p>
+                <button onclick="addToCart('Product 76', 19.99)">Add to Cart</button>
+            </div>
+
+            <div class="product">
+                <img src="0f6f2ffaf99c1fda1d41a6e177e800b9 (1).jpg" alt="Product 77">
+                <h2>Small parrots</h2>
+                <p>Discover joy with our Australian parrot – a lively, sociable companion known for its unique
+                    personality and exceptional mimicry skills. Bring this special bird into your life and experience
+                    the beauty and charm it adds to every moment. Explore our collection now for joyful companionship!
+                </p>
+                <p>$29.99</p>
+                <button onclick="addToCart('Product 77', 29.99)">Add to Cart</button>
+            </div>
+
+            <div class="product">
+                <img src="1c3ef5508c92e390a1d53695f1d1e8a1.jpg" alt="Product 78">
+                <h2>Small parrots</h2>
+                <p>Discover joy with our Australian parrot – a lively, sociable companion known for its unique
+                    personality and exceptional mimicry skills. Bring this special bird into your life and experience
+                    the beauty and charm it adds to every moment. Explore our collection now for joyful companionship!
+                </p>
+                <p>$39.99</p>
+                <button onclick="addToCart('Product 78', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="2acd811e93d59e84797d06b26f290ce2 (1).jpg" alt="Product 79">
+                <h2>Small parrots</h2>
+                <p>Discover joy with our Australian parrot – a lively, sociable companion known for its unique
+                    personality and exceptional mimicry skills. Bring this special bird into your life and experience
+                    the beauty and charm it adds to every moment. Explore our collection now for joyful companionship!
+                </p>
+                <p>$49.99</p>
+                <button onclick="addToCart('Product 79', 39.99)">Add to Cart</button>
+            </div>
+
+            <div class="product">
+                <img src="2b2d32a158577be517a67b255bfd4413 (1).jpg" alt="Product 80">
+                <h2>Small parrots</h2>
+                <p>Discover joy with our Australian parrot – a lively, sociable companion known for its unique
+                    personality and exceptional mimicry skills. Bring this special bird into your life and experience
+                    the beauty and charm it adds to every moment. Explore our collection now for joyful companionship!
+                </p>
+                <p>$59.99</p>
+                <button onclick="addToCart('Product 80', 39.99)">Add to Cart</button>
+            </div>
+
+            <div class="product">
+                <img src="3d85e3242f824d7ae80361b4ec79e719.jpg" alt="Product 81">
+                <h2>Small parrots</h2>
+                <p>Discover joy with our Australian parrot – a lively, sociable companion known for its unique
+                    personality and exceptional mimicry skills. Bring this special bird into your life and experience
+                    the beauty and charm it adds to every moment. Explore our collection now for joyful companionship!
+                </p>
+                <p>$69.99</p>
+                <button onclick="addToCart('Product 81', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="5a3c6c5ebc0b41c25a18873621fb5826.jpg" alt="Product 82">
+                <h2>Small parrots</h2>
+                <p>Discover joy with our Australian parrot – a lively, sociable companion known for its unique
+                    personality and exceptional mimicry skills. Bring this special bird into your life and experience
+                    the beauty and charm it adds to every moment. Explore our collection now for joyful companionship!
+                </p>
+                <p>$69.99</p>
+                <button onclick="addToCart('Product 82', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="4a351ea4e01665ec58f390caf70f69c6.jpg" alt="Product 83">
+                <h2>Small parrots</h2>
+                <p>Discover joy with our Australian parrot – a lively, sociable companion known for its unique
+                    personality and exceptional mimicry skills. Bring this special bird into your life and experience
+                    the beauty and charm it adds to every moment. Explore our collection now for joyful companionship!
+                </p>
+                <p>$69.99</p>
+                <button onclick="addToCart('Product 83', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="30ddd1763b91d86a65e7143085010796 (1).jpg" alt="Product 84">
+                <h2>Small parrots</h2>
+                <p>Discover joy with our Australian parrot – a lively, sociable companion known for its unique
+                    personality and exceptional mimicry skills. Bring this special bird into your life and experience
+                    the beauty and charm it adds to every moment. Explore our collection now for joyful companionship!
+                </p>
+                <p>$39.99</p>
+                <button onclick="addToCart('Product 84', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="38bdf812abebdda1592a8ddfddaed813.jpg" alt="Product 85">
+                <h2>Small parrots</h2>
+                <p>Discover joy with our Australian parrot – a lively, sociable companion known for its unique
+                    personality and exceptional mimicry skills. Bring this special bird into your life and experience
+                    the beauty and charm it adds to every moment. Explore our collection now for joyful companionship!
+                </p>
+                <p>$49.99</p>
+                <button onclick="addToCart('Product 85', 39.99)">Add to Cart</button>
+            </div>
+
+            <div class="product">
+                <img src="67c0167f211b1f8c24a9f67bba928275.jpg" alt="Product 86">
+                <h2>Small parrots</h2>
+                <p>Discover joy with our Australian parrot – a lively, sociable companion known for its unique
+                    personality and exceptional mimicry skills. Bring this special bird into your life and experience
+                    the beauty and charm it adds to every moment. Explore our collection now for joyful companionship!
+                </p>
+                <p>$59.99</p>
+                <button onclick="addToCart('Product 86', 39.99)">Add to Cart</button>
+            </div>
+
+            <div class="product">
+                <img src="165a720a2a2e867ef1ea7975f1d6d8fe.jpg" alt="Product 87">
+                <h2>Small parrots</h2>
+                <p>Discover joy with our Australian parrot – a lively, sociable companion known for its unique
+                    personality and exceptional mimicry skills. Bring this special bird into your life and experience
+                    the beauty and charm it adds to every moment. Explore our collection now for joyful companionship!
+                </p>
+                <p>$69.99</p>
+                <button onclick="addToCart('Product 87', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="5308e360d84e104467a3f2a3d4e3043a (1).jpg" alt="Product 88">
+                <h2>Small parrots</h2>
+                <p>Discover joy with our Australian parrot – a lively, sociable companion known for its unique
+                    personality and exceptional mimicry skills. Bring this special bird into your life and experience
+                    the beauty and charm it adds to every moment. Explore our collection now for joyful companionship!
+                </p>
+                <p>$69.99</p>
+                <button onclick="addToCart('Product 88', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="09761de17f9eb85691a66b0714383459.jpg" alt="Product 89">
+                <h2>Small parrots</h2>
+                <p>Discover joy with our Australian parrot – a lively, sociable companion known for its unique
+                    personality and exceptional mimicry skills. Bring this special bird into your life and experience
+                    the beauty and charm it adds to every moment. Explore our collection now for joyful companionship!
+                </p>
+                <p>$69.99</p>
+                <button onclick="addToCart('Product 89', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="117378a6fce95af2e00645ed934f313d (1).jpg" alt="Product 90">
+                <h2>Small parrots</h2>
+                <p>Discover joy with our Australian parrot – a lively, sociable companion known for its unique
+                    personality and exceptional mimicry skills. Bring this special bird into your life and experience
+                    the beauty and charm it adds to every moment. Explore our collection now for joyful companionship!
+                </p>
+                <p>$69.99</p>
+                <button onclick="addToCart('Product 90', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="371918f3aebe0d8b03761b12e1ba89f6.jpg" alt="Product 91">
+                <h2>Small parrots</h2>
+                <p>Discover joy with our Australian parrot – a lively, sociable companion known for its unique
+                    personality and exceptional mimicry skills. Bring this special bird into your life and experience
+                    the beauty and charm it adds to every moment. Explore our collection now for joyful companionship!
+                </p>
+                <p>$69.99</p>
+                <button onclick="addToCart('Product 91', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="b3d35f3de0cd42f604313840a429ff50 (1).jpg" alt="Product 92">
+                <h2>Small parrots</h2>
+                <p>Discover joy with our Australian parrot – a lively, sociable companion known for its unique
+                    personality and exceptional mimicry skills. Bring this special bird into your life and experience
+                    the beauty and charm it adds to every moment. Explore our collection now for joyful companionship!
+                </p>
+                <p>$69.99</p>
+                <button onclick="addToCart('Product 92', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="b04e9baa335d3123c02d33c1fb80a5ca (1).jpg" alt="Product 93">
+                <h2>Small parrots</h2>
+                <p>Discover joy with our Australian parrot – a lively, sociable companion known for its unique
+                    personality and exceptional mimicry skills. Bring this special bird into your life and experience
+                    the beauty and charm it adds to every moment. Explore our collection now for joyful companionship!
+                </p>
+                <p>$69.99</p>
+                <button onclick="addToCart('Product 93', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="b44e400803605166e0ef9be897a97cc7 (1).jpg" alt="Product 94">
+                <h2>Small parrots</h2>
+                <p>Discover joy with our Australian parrot – a lively, sociable companion known for its unique
+                    personality and exceptional mimicry skills. Bring this special bird into your life and experience
+                    the beauty and charm it adds to every moment. Explore our collection now for joyful companionship!
+                </p>
+                <p>$69.99</p>
+                <button onclick="addToCart('Product 94', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="c5dcbc44393620ffc6a1ae38cc850a9c.jpg" alt="Product 95">
+                <h2>Small parrots</h2>
+                <p>Discover joy with our Australian parrot – a lively, sociable companion known for its unique
+                    personality and exceptional mimicry skills. Bring this special bird into your life and experience
+                    the beauty and charm it adds to every moment. Explore our collection now for joyful companionship!
+                </p>
+                <p>$69.99</p>
+                <button onclick="addToCart('Product 95', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="c79b23fdd15f4eb2022b43421921f073 (1).jpg" alt="Product 96">
+                <h2>Small parrots</h2>
+                <p>Discover joy with our Australian parrot – a lively, sociable companion known for its unique
+                    personality and exceptional mimicry skills. Bring this special bird into your life and experience
+                    the beauty and charm it adds to every moment. Explore our collection now for joyful companionship!
+                </p>
+                <p>$69.99</p>
+                <button onclick="addToCart('Product 96', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="d9a33434deba60fe7bdce8a6bab97cd9 (1).jpg" alt="Product 97">
+                <h2>Small parrots</h2>
+                <p>Discover joy with our Australian parrot – a lively, sociable companion known for its unique
+                    personality and exceptional mimicry skills. Bring this special bird into your life and experience
+                    the beauty and charm it adds to every moment. Explore our collection now for joyful companionship!
+                </p>
+                <p>$69.99</p>
+                <button onclick="addToCart('Product 97', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="d92e9ec13152c9938f6e9a7f4313d2de (1).jpg" alt="Product 98">
+                <h2>Small parrots</h2>
+                <p>Discover joy with our Australian parrot – a lively, sociable companion known for its unique
+                    personality and exceptional mimicry skills. Bring this special bird into your life and experience
+                    the beauty and charm it adds to every moment. Explore our collection now for joyful companionship!
+                </p>
+                <p>$69.99</p>
+                <button onclick="addToCart('Product 98', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="d562a58e3918b5e2fcd3ef5ae51596ed.jpg" alt="Product 99">
+                <h2>Small parrots</h2>
+                <p>Discover joy with our Australian parrot – a lively, sociable companion known for its unique
+                    personality and exceptional mimicry skills. Bring this special bird into your life and experience
+                    the beauty and charm it adds to every moment. Explore our collection now for joyful companionship!
+                </p>
+                <p>$69.99</p>
+                <button onclick="addToCart('Product 99', 39.99)">Add to Cart</button>
+            </div>
+        </div>
+        <h1
+            style="text-align: center; background-color: rgb(255, 196, 0);width: 100%;height: 40px;border-radius: 20px;">
+            Goldfinch and The Parrot part</h1>
+        <div class="product-category">
+            <div class="product">
+                <img src="8778affd5b209b06eca12a9f7c434308.jpg" alt="Product 100">
+                <h2>Goldfinch</h2>
+                <p>with its vibrant plumage and melodious song, is a small passerine bird cherished for its colorful
+                    appearance and acrobatic flight.</p>
+                <p>$19.99</p>
+                <button onclick="addToCart('Product 100', 19.99)">Add to Cart</button>
+            </div>
+
+            <div class="product">
+                <img src="84746e62b0993a4d89921dff1a92c699.jpg" alt="Product 101">
+                <h2>Goldfinch</h2>
+                <p>with its vibrant plumage and melodious song, is a small passerine bird cherished for its colorful
+                    appearance and acrobatic flight.</p>
+                <p>$29.99</p>
+                <button onclick="addToCart('Product 101', 29.99)">Add to Cart</button>
+            </div>
+
+            <div class="product">
+                <img src="ba285a1392799733ca2fd076c3f9dfde.jpg" alt="Product 102">
+                <h2>Goldfinch</h2>
+                <p>with its vibrant plumage and melodious song, is a small passerine bird cherished for its colorful
+                    appearance and acrobatic flight.</p>
+                <p>$39.99</p>
+                <button onclick="addToCart('Product 102', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="c025f27bbef70576c7b1b62b3603f4d5 (1).jpg" alt="Product 103">
+                <h2>Goldfinch</h2>
+                <p>with its vibrant plumage and melodious song, is a small passerine bird cherished for its colorful
+                    appearance and acrobatic flight.</p>
+                <p>$49.99</p>
+                <button onclick="addToCart('Product 103', 39.99)">Add to Cart</button>
+            </div>
+
+            <div class="product">
+                <img src="efa743ff96ba2c602f7e7318855e1d3b.jpg" alt="Product 104">
+                <h2>Goldfinch</h2>
+                <p>with its vibrant plumage and melodious song, is a small passerine bird cherished for its colorful
+                    appearance and acrobatic flight.</p>
+                <p>$59.99</p>
+                <button onclick="addToCart('Product 104', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="8f26dc0c208a3a50e63f10c0f14c55c3.jpg" alt="Product 104">
+                <h2>Goldfinch</h2>
+                <p>with its vibrant plumage and melodious song, is a small passerine bird cherished for its colorful
+                    appearance and acrobatic flight.</p>
+                <p>$59.99</p>
+                <button onclick="addToCart('Product 104', 39.99)">Add to Cart</button>
+            </div>
+
+            <div class="product">
+                <img src="1edca66e09be7e6af3ec033d21798a53.jpg" alt="Product 105">
+                <h2>Large parrots</h2>
+                <p>Smart, colorful pet birds known for mimicry. She is active and trained, friendly to children and
+                    soothes the atmosphere at home</p>
+                <p>$69.99</p>
+                <button onclick="addToCart('Product 105', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="6f2793cf287b5db1800aa3d94b56cf44.jpg" alt="Product 106">
+                <h2>Large parrots</h2>
+                <p>Smart, colorful pet birds known for mimicry. She is active and trained, friendly to children and
+                    soothes the atmosphere at home</p>
+                <p>$69.99</p>
+                <button onclick="addToCart('Product 106', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="6cf579fbd2c4b9c612c0b277a62af041 (1).jpg" alt="Product 107">
+                <h2>Large parrots</h2>
+                <p>Smart, colorful pet birds known for mimicry. She is active and trained, friendly to children and
+                    soothes the atmosphere at home</p>
+                <p>$69.99</p>
+                <button onclick="addToCart('Product 107', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="08f35f1cdaca3bf6493e1ebb373fe90b.jpg" alt="Product 108">
+                <h2>Large parrots</h2>
+                <p>Smart, colorful pet birds known for mimicry. She is active and trained, friendly to children and
+                    soothes the atmosphere at home</p>
+                <p>$39.99</p>
+                <button onclick="addToCart('Product 108', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="8b971856b27b0ded2aeb90ed4b04faa0.jpg" alt="Product 109">
+                <h2>Large parrots</h2>
+                <p>Smart, colorful pet birds known for mimicry. She is active and trained, friendly to children and
+                    soothes the atmosphere at home</p>
+                <p>$49.99</p>
+                <button onclick="addToCart('Product 109', 39.99)">Add to Cart</button>
+            </div>
+
+            <div class="product">
+                <img src="18ad68b91e31f5e364368a28df41093e.jpg" alt="Product 110">
+                <h2>Large parrots</h2>
+                <p>Smart, colorful pet birds known for mimicry. She is active and trained, friendly to children and
+                    soothes the atmosphere at home</p>
+                <p>$59.99</p>
+                <button onclick="addToCart('Product 110', 39.99)">Add to Cart</button>
+            </div>
+
+            <div class="product">
+                <img src="fe962292971a7080563bd89264b0dbee (1).jpg" alt="Product 111">
+                <h2>Large parrots</h2>
+                <p>Smart, colorful pet birds known for mimicry. She is active and trained, friendly to children and
+                    soothes the atmosphere at home</p>
+                <p>$69.99</p>
+                <button onclick="addToCart('Product 111', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="34a9e68cdc7df5c8189beccc08d38596 (1).jpg" alt="Product 112">
+                <h2>Large parrots</h2>
+                <p>Smart, colorful pet birds known for mimicry. She is active and trained, friendly to children and
+                    soothes the atmosphere at home</p>
+                <p>$69.99</p>
+                <button onclick="addToCart('Product 112', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="78d7f7aa0f4f436b05d0e27a96ea32cd.jpg" alt="Product 113">
+                <h2>Large parrots</h2>
+                <p>Smart, colorful pet birds known for mimicry. She is active and trained, friendly to children and
+                    soothes the atmosphere at home</p>
+                <p>$69.99</p>
+                <button onclick="addToCart('Product 113', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="152db5d53e0789b34d136cd93cdd0416.jpg" alt="Product 114">
+                <h2>Large parrots</h2>
+                <p>Smart, colorful pet birds known for mimicry. She is active and trained, friendly to children and
+                    soothes the atmosphere at home</p>
+                <p>$69.99</p>
+                <button onclick="addToCart('Product 114', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="165a720a2a2e867ef1ea7975f1d6d8fe.jpg" alt="Product 115">
+                <h2>Large parrots</h2>
+                <p>Smart, colorful pet birds known for mimicry. She is active and trained, friendly to children and
+                    soothes the atmosphere at home</p>
+                <p>$69.99</p>
+                <button onclick="addToCart('Product 115', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="199ec679427e7aad8ceb624ebab352f4.jpg" alt="Product 116">
+                <h2>Large parrots</h2>
+                <p>Smart, colorful pet birds known for mimicry. She is active and trained, friendly to children and
+                    soothes the atmosphere at home</p>
+                <p>$69.99</p>
+                <button onclick="addToCart('Product 116', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="259e70bbd9b91cef513063ec35f9c9f3.jpg" alt="Product 117">
+                <h2>Large parrots</h2>
+                <p>Smart, colorful pet birds known for mimicry. She is active and trained, friendly to children and
+                    soothes the atmosphere at home</p>
+                <p>$69.99</p>
+                <button onclick="addToCart('Product 117', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="589bf6e372d992e3d00d54fabd13e4ff (1).jpg" alt="Product 118">
+                <h2>Large parrots</h2>
+                <p>Smart, colorful pet birds known for mimicry. She is active and trained, friendly to children and
+                    soothes the atmosphere at home</p>
+                <p>$69.99</p>
+                <button onclick="addToCart('Product 118', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="616aebc44406d18268dd022a7a17bdc2.jpg" alt="Product 119">
+                <h2>Large parrots</h2>
+                <p>Smart, colorful pet birds known for mimicry. She is active and trained, friendly to children and
+                    soothes the atmosphere at home</p>
+                <p>$69.99</p>
+                <button onclick="addToCart('Product 119', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="0662b5e12cb2787a26383cd2dd2961f2.jpg" alt="Product 120">
+                <h2>Large parrots</h2>
+                <p>Smart, colorful pet birds known for mimicry. She is active and trained, friendly to children and
+                    soothes the atmosphere at home</p>
+                <p>$69.99</p>
+                <button onclick="addToCart('Product 120', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="4833ee2d75d740ebac64f6b770fccd90.jpg" alt="Product 121">
+                <h2>Large parrots</h2>
+                <p>Smart, colorful pet birds known for mimicry. She is active and trained, friendly to children and
+                    soothes the atmosphere at home</p>
+                <p>$69.99</p>
+                <button onclick="addToCart('Product 121', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="49064b41580d88827a6dee5c1771f0f2.jpg" alt="Product 122">
+                <h2>Large parrots</h2>
+                <p>Smart, colorful pet birds known for mimicry. She is active and trained, friendly to children and
+                    soothes the atmosphere at home</p>
+                <p>$69.99</p>
+                <button onclick="addToCart('Product 122', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="8341aab313bcd3dca23640136719e740 (1).jpg" alt="Product 123">
+                <h2>Large parrots</h2>
+                <p>Smart, colorful pet birds known for mimicry. She is active and trained, friendly to children and
+                    soothes the atmosphere at home</p>
+                <p>$69.123</p>
+                <button onclick="addToCart('Product 123', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="7205f72d0730d0a679885073fc034113 (1).jpg" alt="Product 124">
+                <h2>Large parrots</h2>
+                <p>Smart, colorful pet birds known for mimicry. She is active and trained, friendly to children and
+                    soothes the atmosphere at home</p>
+                <p>$69.124</p>
+                <button onclick="addToCart('Product 124', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="7032e3e0e377aabbe1017662847a46d2 (1).jpg" alt="Product 125">
+                <h2>Large parrots</h2>
+                <p>Smart, colorful pet birds known for mimicry. She is active and trained, friendly to children and
+                    soothes the atmosphere at home</p>
+                <p>$69.125</p>
+                <button onclick="addToCart('Product 125', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="48649eb8301fea3688c232cd98ff7af3.jpg" alt="Product 126">
+                <h2>Large parrots</h2>
+                <p>Smart, colorful pet birds known for mimicry. She is active and trained, friendly to children and
+                    soothes the atmosphere at home</p>
+                <p>$69.126</p>
+                <button onclick="addToCart('Product 126', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="a47cf8ca46cb03bb1b957e3b291484a8.jpg" alt="Product 127">
+                <h2>Large parrots</h2>
+                <p>Smart, colorful pet birds known for mimicry. She is active and trained, friendly to children and
+                    soothes the atmosphere at home</p>
+                <p>$69.127</p>
+                <button onclick="addToCart('Product 127', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="a36a228b857daa176ec4292b9cec242e.jpg" alt="Product 128">
+                <h2>Large parrots</h2>
+                <p>Smart, colorful pet birds known for mimicry. She is active and trained, friendly to children and
+                    soothes the atmosphere at home</p>
+                <p>$69.128</p>
+                <button onclick="addToCart('Product 128', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="ac00ce97f8bbb95f3462b285cb01df2c.jpg" alt="Product 129">
+                <h2>Large parrots</h2>
+                <p>Smart, colorful pet birds known for mimicry. She is active and trained, friendly to children and
+                    soothes the atmosphere at home</p>
+                <p>$69.129</p>
+                <button onclick="addToCart('Product 129', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="bd6ac452b0a02dc2021312d63affafc4.jpg" alt="Product 130">
+                <h2>Large parrots</h2>
+                <p>Smart, colorful pet birds known for mimicry. She is active and trained, friendly to children and
+                    soothes the atmosphere at home</p>
+                <p>$69.130</p>
+                <button onclick="addToCart('Product 130', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="bb9b821b1bb7e6132ac7255d81fa8ba8 (1).jpg" alt="Product 131">
+                <h2>Large parrots</h2>
+                <p>Smart, colorful pet birds known for mimicry. She is active and trained, friendly to children and
+                    soothes the atmosphere at home</p>
+                <p>$69.131</p>
+                <button onclick="addToCart('Product 131', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="fc6721f7bd295eb097132ce814d9d728 (1).jpg" alt="Product 132">
+                <h2>Large parrots</h2>
+                <p>Smart, colorful pet birds known for mimicry. She is active and trained, friendly to children and
+                    soothes the atmosphere at home</p>
+                <p>$69.132</p>
+                <button onclick="addToCart('Product 132', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="fe84629fd7107ea5c96edffc7c9f65dd.jpg" alt="Product 133">
+                <h2>Large parrots</h2>
+                <p>Smart, colorful pet birds known for mimicry. She is active and trained, friendly to children and
+                    soothes the atmosphere at home</p>
+                <p>$69.133</p>
+                <button onclick="addToCart('Product 133', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="ed0cd1f0684f4662383d0186eeedfea6.jpg" alt="Product 134">
+                <h2>Large parrots</h2>
+                <p>Smart, colorful pet birds known for mimicry. She is active and trained, friendly to children and
+                    soothes the atmosphere at home</p>
+                <p>$69.134</p>
+                <button onclick="addToCart('Product 134', 39.99)">Add to Cart</button>
+            </div>
+        </div>
+        <h1
+            style="text-align: center; background-color: rgb(255, 196, 0);width: 100%;height: 40px;border-radius: 20px;">
+            Eating birds part</h1>
+        <div class="product-category">
+            <div class="product">
+                <img src="0c9991953bdcc32986d0f7d0599daac3.jpg" alt="Product 100">
+                <h2>GolD WINGS</h2>
+                <p>Nutrient-rich bird food, comprising seeds, grains, and fruits, supports optimal health, energy, and
+                    vibrant plumage.</p>
+                <p>$19.99</p>
+                <button onclick="addToCart('Product 100', 19.99)">Add to Cart</button>
+            </div>
+
+            <div class="product">
+                <img src="1c9a31afa3b42e7ec24b62f35da63543.jpg" alt="Product 101">
+                <h2>KracKer</h2>
+                <p>Nutrient-rich bird food, comprising seeds, grains, and fruits, supports optimal health, energy, and
+                    vibrant plumage.</p>
+                <p>$29.99</p>
+                <button onclick="addToCart('Product 101', 29.99)">Add to Cart</button>
+            </div>
+
+            <div class="product">
+                <img src="2a21c63308427f3f5c54bd1f0614d64c.jpg" alt="Product 102">
+                <h2>EXPERT</h2>
+                <p>Nutrient-rich bird food, comprising seeds, grains, and fruits, supports optimal health, energy, and
+                    vibrant plumage.</p>
+                <p>$39.99</p>
+                <button onclick="addToCart('Product 102', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="2eb9dec7d1962cdd53961e07cbe34388.jpg" alt="Product 103">
+                <h2>Garden Mix</h2>
+                <p>Nutrient-rich bird food, comprising seeds, grains, and fruits, supports optimal health, energy, and
+                    vibrant plumage.</p>
+                <p>$49.99</p>
+                <button onclick="addToCart('Product 103', 39.99)">Add to Cart</button>
+            </div>
+
+            <div class="product">
+                <img src="6da502f8dc2b9da7e16008d352b82cc7.jpg" alt="Product 104">
+                <h2>basic</h2>
+                <p>Nutrient-rich bird food, comprising seeds, grains, and fruits, supports optimal health, energy, and
+                    vibrant plumage.</p>
+                <p>$59.99</p>
+                <button onclick="addToCart('Product 104', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="7a21ce97950dcff0b58ad6f9560b91ee.jpg" alt="Product 104">
+                <h2>Cokorito</h2>
+                <p>Nutrient-rich bird food, comprising seeds, grains, and fruits, supports optimal health, energy, and
+                    vibrant plumage.</p>
+                <p>$59.99</p>
+                <button onclick="addToCart('Product 104', 39.99)">Add to Cart</button>
+            </div>
+
+            <div class="product">
+                <img src="8c814c68f337152c186d5bbe9af6c885.jpg" alt="Product 105">
+                <h2>Smart Selects</h2>
+                <p>Nutrient-rich bird food, comprising seeds, grains, and fruits, supports optimal health, energy, and
+                    vibrant plumage.</p>
+                <p>$69.99</p>
+                <button onclick="addToCart('Product 105', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="9bf72e4261c9c27a35095e85a4108b83.jpg" alt="Product 106">
+                <h2>Pet Food Pouch</h2>
+                <p>Nutrient-rich bird food, comprising seeds, grains, and fruits, supports optimal health, energy, and
+                    vibrant plumage.</p>
+                <p>$69.99</p>
+                <button onclick="addToCart('Product 106', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="9d246862e6db95f13b7989538cb11e6a.jpg" alt="Product 107">
+                <h2>MENU</h2>
+                <p>Nutrient-rich bird food, comprising seeds, grains, and fruits, supports optimal health, energy, and
+                    vibrant plumage.</p>
+                <p>$69.99</p>
+                <button onclick="addToCart('Product 107', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="30f3bd2a67729f31d0d465f224ea95ff.jpg" alt="Product 108">
+                <h2>Fruit Blend Flavor</h2>
+                <p>Nutrient-rich bird food, comprising seeds, grains, and fruits, supports optimal health, energy, and
+                    vibrant plumage.</p>
+                <p>$39.99</p>
+                <button onclick="addToCart('Product 108', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="55ffe6f8eda246dbbd8073b2368e0b42.jpg" alt="Product 109">
+                <h2>Daily Blend</h2>
+                <p>Nutrient-rich bird food, comprising seeds, grains, and fruits, supports optimal health, energy, and
+                    vibrant plumage.</p>
+                <p>$49.99</p>
+                <button onclick="addToCart('Product 109', 39.99)">Add to Cart</button>
+            </div>
+
+            <div class="product">
+                <img src="69b42c1a8df9f9a58f41e2ed36e06aa6.jpg" alt="Product 110">
+                <h2>Prestige</h2>
+                <p>Nutrient-rich bird food, comprising seeds, grains, and fruits, supports optimal health, energy, and
+                    vibrant plumage.</p>
+                <p>$59.99</p>
+                <button onclick="addToCart('Product 110', 39.99)">Add to Cart</button>
+            </div>
+
+            <div class="product">
+                <img src="84b2ad0e55e35836c2549b1bd21ee571.jpg" alt="Product 111">
+                <h2>Prestige</h2>
+                <p>Nutrient-rich bird food, comprising seeds, grains, and fruits, supports optimal health, energy, and
+                    vibrant plumage.</p>
+                <p>$69.99</p>
+                <button onclick="addToCart('Product 111', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="324f22a7e0305a52353d0471f60633ae.jpg" alt="Product 112">
+                <h2>Large Parakeets</h2>
+                <p>Nutrient-rich bird food, comprising seeds, grains, and fruits, supports optimal health, energy, and
+                    vibrant plumage.</p>
+                <p>$69.99</p>
+                <button onclick="addToCart('Product 112', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="727f27165b56c4b091202112636b9a7c.jpg" alt="Product 113">
+                <h2>RIO</h2>
+                <p>Nutrient-rich bird food, comprising seeds, grains, and fruits, supports optimal health, energy, and
+                    vibrant plumage.</p>
+                <p>$69.99</p>
+                <button onclick="addToCart('Product 113', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="4870a3ecb71589505c4bd9c1838e6eff.jpg" alt="Product 114">
+                <h2>SunSations</h2>
+                <p>Nutrient-rich bird food, comprising seeds, grains, and fruits, supports optimal health, energy, and
+                    vibrant plumage.</p>
+                <p>$69.99</p>
+                <button onclick="addToCart('Product 114', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="8354def00b9ebd72aeee3880e0fe8352.jpg" alt="Product 115">
+                <h2>Prestige</h2>
+                <p>Nutrient-rich bird food, comprising seeds, grains, and fruits, supports optimal health, energy, and
+                    vibrant plumage.</p>
+                <p>$69.99</p>
+                <button onclick="addToCart('Product 115', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="16356b3394a2e4c6d5c5f76536aa4f7b.jpg" alt="Product 116">
+                <h2>Witte malen</h2>
+                <p>Nutrient-rich bird food, comprising seeds, grains, and fruits, supports optimal health, energy, and
+                    vibrant plumage.</p>
+                <p>$69.99</p>
+                <button onclick="addToCart('Product 116', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="80738da488c304f40ff76f0749ebe1f3.jpg" alt="Product 117">
+                <h2>ROUDYBUSH</h2>
+                <p>Nutrient-rich bird food, comprising seeds, grains, and fruits, supports optimal health, energy, and
+                    vibrant plumage.</p>
+                <p>$69.99</p>
+                <button onclick="addToCart('Product 117', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="533064bec6c9f6e3dcab8ee06e9398a0.jpg" alt="Product 118">
+                <h2>MEGA ZOO</h2>
+                <p>Nutrient-rich bird food, comprising seeds, grains, and fruits, supports optimal health, energy, and
+                    vibrant plumage.</p>
+                <p>$69.99</p>
+                <button onclick="addToCart('Product 118', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="0993410ac2e242982e5805e7ee994231.jpg" alt="Product 119">
+                <h2>Bucktons</h2>
+                <p>Nutrient-rich bird food, comprising seeds, grains, and fruits, supports optimal health, energy, and
+                    vibrant plumage.</p>
+                <p>$69.99</p>
+                <button onclick="addToCart('Product 119', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="644586c75031e2540f01695e68d671f6.jpg" alt="Product 120">
+                <h2>PRO VITA</h2>
+                <p>Nutrient-rich bird food, comprising seeds, grains, and fruits, supports optimal health, energy, and
+                    vibrant plumage.</p>
+                <p>$69.99</p>
+                <button onclick="addToCart('Product 120', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="a5e3ba84fdcd978e90510c0e734f215e.jpg" alt="Product 121">
+                <h2>Perle</h2>
+                <p>Nutrient-rich bird food, comprising seeds, grains, and fruits, supports optimal health, energy, and
+                    vibrant plumage.</p>
+                <p>$69.99</p>
+                <button onclick="addToCart('Product 121', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="a71492d5434e38f2db4e02dea834d66f.jpg" alt="Product 122">
+                <h2>Nature Mix</h2>
+                <p>Nutrient-rich bird food, comprising seeds, grains, and fruits, supports optimal health, energy, and
+                    vibrant plumage.</p>
+                <p>$69.99</p>
+                <button onclick="addToCart('Product 122', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="ae87168d0fae47df0a9cd6fbf86397fa.jpg" alt="Product 123">
+                <h2>ROUDYBUSH</h2>
+                <p>Nutrient-rich bird food, comprising seeds, grains, and fruits, supports optimal health, energy, and
+                    vibrant plumage.</p>
+                <p>$69.123</p>
+                <button onclick="addToCart('Product 123', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="b713b30f3f2c4cf14bf70043aefb1995.jpg" alt="Product 124">
+                <h2>Sensible Seed</h2>
+                <p>Nutrient-rich bird food, comprising seeds, grains, and fruits, supports optimal health, energy, and
+                    vibrant plumage.</p>
+                <p>$69.124</p>
+                <button onclick="addToCart('Product 124', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="b98f9100b1e915345290e295643e4b49.jpg" alt="Product 125">
+                <h2>Pure Fun</h2>
+                <p>Nutrient-rich bird food, comprising seeds, grains, and fruits, supports optimal health, energy, and
+                    vibrant plumage.</p>
+                <p>$69.125</p>
+                <button onclick="addToCart('Product 125', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="c5a9ac63cf04f73f95667fc9238412f1.jpg" alt="Product 126">
+                <h2>Pure Fun</h2>
+                <p>Nutrient-rich bird food, comprising seeds, grains, and fruits, supports optimal health, energy, and
+                    vibrant plumage.</p>
+                <p>$69.126</p>
+                <button onclick="addToCart('Product 126', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="c23cb8d0f719d170cb941e0df30c5967.jpg" alt="Product 127">
+                <h2>Exotic fruit</h2>
+                <p>Nutrient-rich bird food, comprising seeds, grains, and fruits, supports optimal health, energy, and
+                    vibrant plumage.</p>
+                <p>$69.127</p>
+                <button onclick="addToCart('Product 127', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="c55212cfd098869f7078a441f985c7ff.jpg" alt="Product 128">
+                <h2>RIO</h2>
+                <p>Nutrient-rich bird food, comprising seeds, grains, and fruits, supports optimal health, energy, and
+                    vibrant plumage.</p>
+                <p>$69.128</p>
+                <button onclick="addToCart('Product 128', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="c76510b81c4db1b0c68bc59844b610ba.jpg" alt="Product 129">
+                <h2>KAYTEE</h2>
+                <p>Nutrient-rich bird food, comprising seeds, grains, and fruits, supports optimal health, energy, and
+                    vibrant plumage.</p>
+                <p>$69.129</p>
+                <button onclick="addToCart('Product 129', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="d50c05ce07132f553343a2d56dab18d9.jpg" alt="Product 130">
+                <h2>Pure Fun</h2>
+                <p>Nutrient-rich bird food, comprising seeds, grains, and fruits, supports optimal health, energy, and
+                    vibrant plumage.</p>
+                <p>$69.130</p>
+                <button onclick="addToCart('Product 130', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="dce13893f6366c8ef7b1690a22962801.jpg" alt="Product 131">
+                <h2>Manywka</h2>
+                <p>Nutrient-rich bird food, comprising seeds, grains, and fruits, supports optimal health, energy, and
+                    vibrant plumage.</p>
+                <p>$69.131</p>
+                <button onclick="addToCart('Product 131', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="dd58f5926e863c311cffb9cd93525762.jpg" alt="Product 132">
+                <h2>MORBIDO SUPER</h2>
+                <p>Nutrient-rich bird food, comprising seeds, grains, and fruits, supports optimal health, energy, and
+                    vibrant plumage.</p>
+                <p>$69.132</p>
+                <button onclick="addToCart('Product 132', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="fe0802a40fe0d6371191248c2c0e5484.jpg" alt="Product 133">
+                <h2>RIO</h2>
+                <p>Nutrient-rich bird food, comprising seeds, grains, and fruits, supports optimal health, energy, and
+                    vibrant plumage.</p>
+                <p>$69.133</p>
+                <button onclick="addToCart('Product 133', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="12215acaf3f09e0da07a94f806852398.jpg" alt="Product 134">
+                <h2>Prestige</h2>
+                <p>Nutrient-rich bird food, comprising seeds, grains, and fruits, supports optimal health, energy, and
+                    vibrant plumage.</p>
+                <p>$69.134</p>
+                <button onclick="addToCart('Product 134', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="4c0ea4c77e7b0d30b3dcb26f8720a855.jpg" alt="Product 134">
+                <h2>Euro Gold</h2>
+                <p>Nutrient-rich bird food, comprising seeds, grains, and fruits, supports optimal health, energy, and
+                    vibrant plumage.</p>
+                <p>$69.134</p>
+                <button onclick="addToCart('Product 134', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="6e8b0a55eab2fb764ea48d13805ecf5b.jpg" alt="Product 134">
+                <h2>Smakers</h2>
+                <p>Nutrient-rich bird food, comprising seeds, grains, and fruits, supports optimal health, energy, and
+                    vibrant plumage.</p>
+                <p>$69.134</p>
+                <button onclick="addToCart('Product 134', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="14d9699bb0464eece4795a4226ef6e30.jpg" alt="Product 134">
+                <h2>AVI-CAKES</h2>
+                <p>Nutrient-rich bird food, comprising seeds, grains, and fruits, supports optimal health, energy, and
+                    vibrant plumage.</p>
+                <p>$69.134</p>
+                <button onclick="addToCart('Product 134', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="557db2514a9cabd69230eeb1dae00df5.jpg" alt="Product 134">
+                <h2>Smakers</h2>
+                <p>Nutrient-rich bird food, comprising seeds, grains, and fruits, supports optimal health, energy, and
+                    vibrant plumage.</p>
+                <p>$69.134</p>
+                <button onclick="addToCart('Product 134', 39.99)">Add to Cart</button>
+            </div>
+        </div>
+        <h1
+            style="text-align: center; background-color: rgb(255, 196, 0);width: 100%;height: 40px;border-radius: 20px;">
+            Bird cages part</h1>
+        <div class="product-category">
+            <div class="product">
+                <img src="1fa3c69114c991255279c183da8735ae.jpg" alt="Product 76">
+                <h2>Cage</h2>
+                <p>Bird cages provide secure, comfortable environments with perches and feeding bowls for pet birds,
+                    catering to various species' needs.</p>
+                <p>$19.99</p>
+                <button onclick="addToCart('Product 76', 19.99)">Add to Cart</button>
+            </div>
+
+            <div class="product">
+                <img src="2a593ac27acba57fb5c162f4e0578f4d.jpg" alt="Product 77">
+                <h2>Cage</h2>
+                <p>Bird cages provide secure, comfortable environments with perches and feeding bowls for pet birds,
+                    catering to various species' needs.</p>
+                <p>$29.99</p>
+                <button onclick="addToCart('Product 77', 29.99)">Add to Cart</button>
+            </div>
+
+            <div class="product">
+                <img src="3c30e0e57bf51dcbb914f44f6b3c8f97.jpg" alt="Product 78">
+                <h2>Cage</h2>
+                <p>Bird cages provide secure, comfortable environments with perches and feeding bowls for pet birds,
+                    catering to various species' needs.</p>
+                <p>$39.99</p>
+                <button onclick="addToCart('Product 78', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="3dceff2e332fe5b3918e63b30216a780.jpg" alt="Product 79">
+                <h2>Cage</h2>
+                <p>Bird cages provide secure, comfortable environments with perches and feeding bowls for pet birds,
+                    catering to various species' needs.</p>
+                <p>$49.99</p>
+                <button onclick="addToCart('Product 79', 39.99)">Add to Cart</button>
+            </div>
+
+            <div class="product">
+                <img src="5ca538ec3acd185364a34351932823b8.jpg" alt="Product 80">
+                <h2>Cage</h2>
+                <p>Bird cages provide secure, comfortable environments with perches and feeding bowls for pet birds,
+                    catering to various species' needs.</p>
+                <p>$59.99</p>
+                <button onclick="addToCart('Product 80', 39.99)">Add to Cart</button>
+            </div>
+
+            <div class="product">
+                <img src="6de5ad6710f62ec775deec126dd073e2.jpg" alt="Product 81">
+                <h2>Cage</h2>
+                <p>Bird cages provide secure, comfortable environments with perches and feeding bowls for pet birds,
+                    catering to various species' needs.</p>
+                <p>$69.99</p>
+                <button onclick="addToCart('Product 81', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="6abf42db3162819917e78ca4823989d3.jpg" alt="Product 82">
+                <h2>Cage</h2>
+                <p>Bird cages provide secure, comfortable environments with perches and feeding bowls for pet birds,
+                    catering to various species' needs.</p>
+                <p>$69.99</p>
+                <button onclick="addToCart('Product 82', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="7a71625389dbe48feb75b76746f983c3.jpg" alt="Product 83">
+                <h2>Cage</h2>
+                <p>Bird cages provide secure, comfortable environments with perches and feeding bowls for pet birds,
+                    catering to various species' needs.</p>
+                <p>$69.99</p>
+                <button onclick="addToCart('Product 83', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="8cbcd6652117a74b7818ccff06114aaf.jpg" alt="Product 84">
+                <h2>Cage</h2>
+                <p>Bird cages provide secure, comfortable environments with perches and feeding bowls for pet birds,
+                    catering to various species' needs.</p>
+                <p>$39.99</p>
+                <button onclick="addToCart('Product 84', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="9d46cc9eaa8b6e61f2ec339343d2d5c0.jpg" alt="Product 85">
+                <h2>Cage</h2>
+                <p>Bird cages provide secure, comfortable environments with perches and feeding bowls for pet birds,
+                    catering to various species' needs.</p>
+                <p>$49.99</p>
+                <button onclick="addToCart('Product 85', 39.99)">Add to Cart</button>
+            </div>
+
+            <div class="product">
+                <img src="19bc2d5957c325499faa4db3e817cd17.jpg" alt="Product 86">
+                <h2>Cage</h2>
+                <p>Bird cages provide secure, comfortable environments with perches and feeding bowls for pet birds,
+                    catering to various species' needs.</p>
+                <p>$59.99</p>
+                <button onclick="addToCart('Product 86', 39.99)">Add to Cart</button>
+            </div>
+
+            <div class="product">
+                <img src="56ba97059e2b938d0f0d82fd51ce9a35.jpg" alt="Product 87">
+                <h2>Cage</h2>
+                <p>Bird cages provide secure, comfortable environments with perches and feeding bowls for pet birds,
+                    catering to various species' needs.</p>
+                <p>$69.99</p>
+                <button onclick="addToCart('Product 87', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="66c23150fba9759e26b3e1b08f444cbb.jpg" alt="Product 88">
+                <h2>Cage</h2>
+                <p>Bird cages provide secure, comfortable environments with perches and feeding bowls for pet birds,
+                    catering to various species' needs.</p>
+                <p>$69.99</p>
+                <button onclick="addToCart('Product 88', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="96f80b2b3567a66f03d6770ef872459c.jpg" alt="Product 89">
+                <h2>Cage</h2>
+                <p>Bird cages provide secure, comfortable environments with perches and feeding bowls for pet birds,
+                    catering to various species' needs.</p>
+                <p>$69.99</p>
+                <button onclick="addToCart('Product 89', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="541cdb7ce78e83c806f7faa1ad8a1f74.jpg" alt="Product 90">
+                <h2>Cage</h2>
+                <p>Bird cages provide secure, comfortable environments with perches and feeding bowls for pet birds,
+                    catering to various species' needs.</p>
+                <p>$69.99</p>
+                <button onclick="addToCart('Product 90', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="745d48557dc5bfac4523b9bca65a0646.jpg" alt="Product 91">
+                <h2>Cage</h2>
+                <p>Bird cages provide secure, comfortable environments with perches and feeding bowls for pet birds,
+                    catering to various species' needs.</p>
+                <p>$69.99</p>
+                <button onclick="addToCart('Product 91', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="2413a925781e05914c2e4e5f222698ba.jpg" alt="Product 92">
+                <h2>Cage</h2>
+                <p>Bird cages provide secure, comfortable environments with perches and feeding bowls for pet birds,
+                    catering to various species' needs.</p>
+                <p>$69.99</p>
+                <button onclick="addToCart('Product 92', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="0464507c973923596bbe8b162489f35c.jpg" alt="Product 93">
+                <h2>Cage</h2>
+                <p>Bird cages provide secure, comfortable environments with perches and feeding bowls for pet birds,
+                    catering to various species' needs.</p>
+                <p>$69.99</p>
+                <button onclick="addToCart('Product 93', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="085737770c6b88bb069eac42f22d304b.jpg" alt="Product 94">
+                <h2>Cage</h2>
+                <p>Bird cages provide secure, comfortable environments with perches and feeding bowls for pet birds,
+                    catering to various species' needs.</p>
+                <p>$69.99</p>
+                <button onclick="addToCart('Product 94', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="887300263db9130e39e11b8995c3b030.jpg" alt="Product 95">
+                <h2>Cage</h2>
+                <p>Bird cages provide secure, comfortable environments with perches and feeding bowls for pet birds,
+                    catering to various species' needs.</p>
+                <p>$69.99</p>
+                <button onclick="addToCart('Product 95', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="a056969b3235b723db7895b1202df2f2.jpg" alt="Product 96">
+                <h2>Cage</h2>
+                <p>Bird cages provide secure, comfortable environments with perches and feeding bowls for pet birds,
+                    catering to various species' needs.</p>
+                <p>$69.99</p>
+                <button onclick="addToCart('Product 96', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="acaf8c1b28ac72d1f0d48a4f083406a6.jpg" alt="Product 97">
+                <h2>Cage</h2>
+                <p>Bird cages provide secure, comfortable environments with perches and feeding bowls for pet birds,
+                    catering to various species' needs.</p>
+                <p>$69.99</p>
+                <button onclick="addToCart('Product 97', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="a113596a1dae7bf92486361f47c2f903.jpg" alt="Product 98">
+                <h2>Cage</h2>
+                <p>Bird cages provide secure, comfortable environments with perches and feeding bowls for pet birds,
+                    catering to various species' needs.</p>
+                <p>$69.99</p>
+                <button onclick="addToCart('Product 98', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="ad15d19de251746cff9b0972345d01c4.jpg" alt="Product 99">
+                <h2>Cage</h2>
+                <p>Bird cages provide secure, comfortable environments with perches and feeding bowls for pet birds,
+                    catering to various species' needs.</p>
+                <p>$69.99</p>
+                <button onclick="addToCart('Product 99', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="b3684d1e9456d2c6f176c11aea832190.jpg" alt="Product 99">
+                <h2>Cage</h2>
+                <p>Bird cages provide secure, comfortable environments with perches and feeding bowls for pet birds,
+                    catering to various species' needs.</p>
+                <p>$69.99</p>
+                <button onclick="addToCart('Product 99', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="d053366c26e4af52f8d476da7533f7a3.jpg" alt="Product 99">
+                <h2>Cage</h2>
+                <p>Bird cages provide secure, comfortable environments with perches and feeding bowls for pet birds,
+                    catering to various species' needs.</p>
+                <p>$69.99</p>
+                <button onclick="addToCart('Product 99', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="d155e08e781332f626d3f2b22349226c.jpg" alt="Product 99">
+                <h2>Cage</h2>
+                <p>Bird cages provide secure, comfortable environments with perches and feeding bowls for pet birds,
+                    catering to various species' needs.</p>
+                <p>$69.99</p>
+                <button onclick="addToCart('Product 99', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="eb7c139f2e85355529605404de2ed7b1.jpg" alt="Product 99">
+                <h2>Cage</h2>
+                <p>Bird cages provide secure, comfortable environments with perches and feeding bowls for pet birds,
+                    catering to various species' needs.</p>
+                <p>$69.99</p>
+                <button onclick="addToCart('Product 99', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="ebf44f134f7089dacf38ab61fb992aa8.jpg" alt="Product 99">
+                <h2>Cage</h2>
+                <p>Bird cages provide secure, comfortable environments with perches and feeding bowls for pet birds,
+                    catering to various species' needs.</p>
+                <p>$69.99</p>
+                <button onclick="addToCart('Product 99', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="ec864168519d476cb1671964092de346.jpg" alt="Product 99">
+                <h2>Cage</h2>
+                <p>Bird cages provide secure, comfortable environments with perches and feeding bowls for pet birds,
+                    catering to various species' needs.</p>
+                <p>$69.99</p>
+                <button onclick="addToCart('Product 99', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="f02777d4e091af81a1036dd39877d1fb.jpg" alt="Product 99">
+                <h2>Cage</h2>
+                <p>Bird cages provide secure, comfortable environments with perches and feeding bowls for pet birds,
+                    catering to various species' needs.</p>
+                <p>$69.99</p>
+                <button onclick="addToCart('Product 99', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="fcc7bf1b4d345514cf10b284dd8c9677.jpg" alt="Product 99">
+                <h2>Cage</h2>
+                <p>Bird cages provide secure, comfortable environments with perches and feeding bowls for pet birds,
+                    catering to various species' needs.</p>
+                <p>$69.99</p>
+                <button onclick="addToCart('Product 99', 39.99)">Add to Cart</button>
+            </div>
+        </div>
+    </section>
+    <div class="form">
+        <h1
+            style="text-align: center;background-color: rgb(240, 169, 15);border-radius: 20px;box-shadow: 0 20px 29px rgba(0, 0, 0, 0.3);height: 40px;">
+            Registration Form</h1>
+        <form style="color: rgb(2, 2, 2);margin: 10px;">
+            <label for="name"><b>Full Name:</b></label>
+            <input type="text" id="name" name="name" style="width: 60%;height: 20px;" required><br><br><br>
+
+            <label for="phone"><b>Phone Number:</b></label>
+            <input type="tel" id="phone" name="phone" style="width: 60%;height: 20px;" required><br><br><br>
+
+            <label for="email"><b>Email:</b></label>
+            <input type="email" id="email" name="email" style="width: 60%;height: 20px;" required><br><br><br>
+
+            <label for="address"><b>Address:</b></label>
+            <input type="text" id="address" name="address" style="width: 60%;height: 20px;" required><br><br><br>
+
+            <label for="city"><b>City:</b></label>
+            <input type="text" id="city" name="city" style="width: 60%; height: 20px;" required><br><br><br>
+
+            <button type="submit" style="width: 20%; height: 30px;left: 100px;">Register</button>
+        </form>
+    </div>
+
+    <div class="container">
+        <div class="section20">
+            <h2><b>Information about the store</b></h2>
+            <p>A practical, easy-to-use store with all the usual payment methods, variety and difference in products,
+                with a smooth arrangement to quickly search for your products.</p>
+        </div>
+        <div class="section20">
+            <h2><b>Technical support information</b></h2>
+            <p>Technical support is available 24 hours a day, 7 days a week, to help you, answer all your questions, and
+                solve problems that you may encounter while shopping. It responds quickly and provides accurate
+                information.</p>
+        </div>
+        <div class="section20">
+            <h2><b>Contact Us</b></h2>
+            <p>To contact us, use the following email : <a href="ghilalyass28@gmail.com">ghilalyass28@gmail.com</a> or
+                <a href="kawtarchinoune320@gmail.com">kawtarchinoune320@gmail.com</a> Or on WhatsApp at the following
+                number : <a href="+212649448917">+212649448917</a> or <a href="+212617837827">+212617837827</a>.</p>
+        </div>
+    </div>
+    <button id="chatButton" onclick="openChat()">💬</button>
+    <div id="chatWindow">
+        <div id="titleBar">
+            Chat with Support
+            <button id="closeButton" onclick="closeChat()">X</button>
+        </div>
+        <div id="messageBox">
+            <p><strong>You:</strong> Hello, how can I help you?</p>
+        </div>
+        <input id="inputBox" type="text" placeholder="Enter your message here..." onkeypress="sendMessage(event)">
+        <input type="file" id="imageUpload" accept="image/*" onchange="handleImageUpload(event)">
+        <button id="sendButton" onclick="sendMessage()"><b>Send</b></button>
+    </div>
+    <script>
+        function openChat() {
+            var x = document.getElementById("chatWindow");
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+        }
+        function closeChat() {
+            var x = document.getElementById("chatWindow");
+            x.style.display = "none";
+        }
+        function sendMessage(event) {
+            if (event && event.key !== "Enter") return;
+            var message = document.getElementById("inputBox").value;
+            var messageBox = document.getElementById("messageBox");
+            messageBox.innerHTML += "<p><strong>You:</strong> " + message + "</p>";
+            document.getElementById("inputBox").value = "";
+        }
+        function handleImageUpload(event) {
+            var fileInput = event.target;
+            var file = fileInput.files[0];
+
+            if (file) {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    var imageUrl = e.target.result;
+                    var messageBox = document.getElementById("messageBox");
+                    messageBox.innerHTML += "<p><strong>You:</strong> <img src='" + imageUrl + "' alt='Uploaded Image'></p>";
+                }; reader.readAsDataURL(file);
+            }
+        }
+    </script>
+    <footer>
+        <p
+            style="text-align: center;background-color: white;border-radius: 20px;box-shadow: 0 20px 29px rgba(0, 0, 0, 0.3);height: 25px;">
+            <b>Website created in 2023 by YASSINE RHILAL ET KAWTAR CHINOUNE.</b></p>
+    </footer>
+
+</body>
+
+</html>
